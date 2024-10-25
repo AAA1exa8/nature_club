@@ -45,9 +45,6 @@ def add(x, y):
     """)
     print("add(5, 10) is", add(5, 10))
 
-
-
-
 def if_statements():
     print("if_stateents() called")
     print("if statements are used to make decisions in code.")
@@ -128,7 +125,6 @@ else:
     else:
         print("x == y")
 
-
 def loops():
     print("loops() called")
     print("loops are used to repeat code.")
@@ -145,7 +141,7 @@ while i < 5:
         print(i)
         i += 1
     print("for loops:")
-    print("for loops create local named variable.")
+    print("for loops create variable for you.")
     print("this variable gains the value of each element in the iterable.")
     print("""
 for i in range(5):
@@ -209,7 +205,6 @@ for i in range(10):
         if i == 5:
             continue
         print(i)
-
 
 def functions():
     print("functions() called")
@@ -286,7 +281,6 @@ def calc(x, y, op):
     print("calc(5, 10, add) is", calc(5, 10, add))
     print("calc(5, 10, sub) is", calc(5, 10, sub))
 
-
 def lists():
     print("lists() called")
     print("lists are used to store multiple values.")
@@ -346,6 +340,90 @@ def lists():
     print("list_1 is", list_1)
     print("list_2 is", list_2)
 
+def strings():
+    print("strings() called")
+    print("strings are used to store text.")
+    print("strings are created using single or double quotes.")
+    print("strings can be accessed using an index.")
+    print("strings can be sliced using a start and end index.")
+    print("strings can be concatenated using the + operator.")
+    print("strings can be repeated using the * operator.")
+    print("strings can be formatted using the format method.")
+    print("name = 'John'")
+    name = 'John'
+    for i in range(len(name)):
+        print("name[{}] is".format(i), name[i])
+    print("name[0:3] is", name[0:3])
+    print("name + ' Doe' is", name + ' Doe')
+    print("name * 3 is", name * 3)
+    print("name = 'John'")
+    print("age = 25")
+    print("person = '{} is {} years old'.format(name, age)")
+    name = 'John'
+    age = 25
+    person = '{} is {} years old'.format(name, age)
+    print("person is", person)
+
+def tuples():
+    print("tuples() called")
+    print("tuples are used to store multiple values.")
+    print("tuples are created using parentheses.")
+    print("tuples can contain any type of value.")
+    print("tuples can be accessed using an index.")
+    print("tuples can be sliced using a start and end index.")
+    print("tuples are immutable.")
+    print("tuple_1 = (1, 2, 3, 4, 5)")
+    tuple_1 = (1, 2, 3, 4, 5)
+    for i in range(len(tuple_1)):
+        print("tuple_1[{}] is".format(i), tuple_1[i])
+    print("tuple_1[0:3] is", tuple_1[0:3])
+    print("tuples are immutable")
+    print("tuple_2 = tuple_1")
+    tuple_2 = tuple_1
+    print("tuple_1 is", tuple_1)
+    print("tuple_2 is", tuple_2)
+    print("tuple_1[0] = 100")
+    try:
+        tuple_1[0] = 100
+    except TypeError as e:
+        print(e)
+    print("tuple_1 is", tuple_1)
+    print("tuple_2 is", tuple_2)
+    tuple_3 = tuple_1 + tuple_2
+    print("tuple_3 = tuple_1 + tuple_2")
+    print("tuple_3 is", tuple_3)
+    tuple_4 = ([], {})
+    print("tuple_4 = ([], {})")
+    print("tuple_4 is", tuple_4)
+    print("tuple_4[0].append(1)")
+    print("tuple_4[1]['name'] = 'John'")
+    tuple_4[0].append(1)
+    tuple_4[1]['name'] = 'John'
+    print("tuple_4 is", tuple_4)
+    print("tuples are reference type.")
+    print("tuple_5 = tuple_4")
+    tuple_5 = tuple_4
+    print("tuple_4 is", tuple_4)
+    print("tuple_5 is", tuple_5)
+    print("tuple_4[0].append(2)")
+    print("tuple_4[1]['age'] = 25")
+    tuple_4[0].append(2)
+    tuple_4[1]['age'] = 25
+    print("tuple_4 is", tuple_4)
+    print("tuple_5 is", tuple_5)
+    print("tuple_4 and tuple_5 are the same tuple.")
+    print("to create a copy of a tuple we need to copy it's contents.")
+    print("tuple_5 = tuple_4[0], tuple_4[1].copy()")
+    tuple_5 = tuple_4[0].copy(), tuple_4[1].copy()
+    print("tuple_4 is", tuple_4)
+    print("tuple_5 is", tuple_5)
+    print("tuple_4[0].append(3)")
+    print("tuple_4[1]['name'] = 'Alice'")
+    tuple_4[0].append(3)
+    tuple_4[1]['name'] = 'Alice'
+    print("tuple_4 is", tuple_4)
+    print("tuple_5 is", tuple_5)
+    
 def dictionaries():
     print("dictionaries() called")
     print("dictionaries are used to store key value pairs.")
@@ -388,13 +466,111 @@ def dictionaries():
     print("person is", person)
     print("person_2 is", person_2)
 
+def scopes():
+    print("scopes() called")
+    print("scopes are used to control the visibility of variables.")
+    print("x = 5")
+    x = 5
+    print("this variable is in the global scope")
+    print("""
+if True:
+    x = 10
+""")
+    if True:
+        x = 10
+    print("x is", x)
+    print("the x in the if statement is the same x in the global scope")
+    print("""
+for i in range(5):
+    x = x + 1
+    print(x)
+""")
+    for i in range(5):
+        x = x + 1
+        print(x)
+    print("x is", x)
+    print("the x in the for loop is the same x in the global scope")
+    print("""
+for i in range(5):
+    y = i
+print(y)
+""")
+    for i in range(5):
+        y = i
+    print("y is", y)
+    print("the y in the for loop is in the global scope")
+    print("this is dangerous because the if the loop runs zero times the variable y will not exist")
+    print("""
+for i in range(0):
+    q = i
+print(q)
+""")
+    for i in range(0):
+        q = i
+    try:
+        print(q)
+    except NameError as e:
+        print(e)
+    print("the same goes for variables defined in if statements")
+    print("""
+if y == 3:
+    z = 10
+print(z)
+""")
+    if y == 3:
+        z = 10
+    try:
+        print(z)
+    except NameError as e:
+        print(e)
+    print("variables defined in functions are localo for the functions")
+    print("""
+x = 5
+def print_x():
+    x = 10
+    print(x)
+print_x()
+print(x)
+""")
+    x = 5
+    def print_x():
+        x = 10
+        print(x)
+    print_x()
+    print(x)
+    print("the x in the function is different from the x in the global scope")
+    print("this is because the x in the function is local to the function")
+    print("variables defined in functions can be accessed in the global scope")
+    print("""
+y = 3
+def print_y():
+    global y
+    y = 10
+    print(y)
+print(y)
+print_y()
+print(y)
+""")
+    y = 3
+    def print_y():
+        nonlocal y
+        y = 10
+        print(y)
+    print(y)
+    print_y()
+    print(y)
+
+
 print("""
 1. variables
 2. if statements
 3. loops
 4. functions
 5. lists
-6. dictionaries
+6. strings
+7. tuples
+8. dictionaries
+9. scopes
 """)
 choice = input("Enter choice: ")
 match choice:
@@ -409,6 +585,12 @@ match choice:
     case "5":
         lists()
     case "6":
+        strings()
+    case "7":
+        tuples()
+    case "8":
         dictionaries()
+    case "9":
+        scopes()
     case _:
         warn("Invalid choice")
