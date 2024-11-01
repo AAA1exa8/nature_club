@@ -36,9 +36,9 @@ def parse_input(file_path):
 def calculate_output(games):
     output = 0
     for game in games:
-        max_red = max((r['red'] for r in game.values if r['red'] is not None), default=0)
-        max_blue = max((r['blue'] for r in game.values if r['blue'] is not None), default=0)
-        max_green = max((r['green'] for r in game.values if r['green'] is not None), default=0)
+        max_red = max((r['red'] for r in game.values), default=0)
+        max_blue = max((r['blue'] for r in game.values), default=0)
+        max_green = max((r['green'] for r in game.values), default=0)
         output += max_red * max_blue * max_green
     return output
 
