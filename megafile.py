@@ -320,6 +320,9 @@ def lists():
     print("list_1.sort()")
     list_1.sort()
     print("list_1 is", list_1)
+    print("list.extend([4,5,6])")
+    list_1.extend([4,5,6])
+    print("list_1 is", list_1)
     print("list are reference type")
     print("list_2 = list_1")
     list_2 = list_1
