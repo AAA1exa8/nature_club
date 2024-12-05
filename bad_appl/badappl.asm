@@ -40,7 +40,7 @@ loop:
     jmpeq r2, r10, r11
     jmp r12
 frame:
-    stall 30
+    stall 33
     show
     li r13, 420714
     li r14, halt

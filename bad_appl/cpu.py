@@ -107,15 +107,10 @@ class CPU:
 
     def show(self):
         data = self.memory[0:64]
-        frame = ''
-        for i in range(0, 64, 2):
-            chunk = data[i] | data[i+1] << 32
-            for j in range(64):
-                if chunk & (1 << j) != 0:
-                    frame += '  '
-                else:
-                    frame += '██'
-            frame += '\n'
+        frame = '\n'.join(
+            ''.join('  ' if (data[i] | data[i+1] << 32) & (1 << j) else '██' for j in range(64))
+            for i in range(0, 64, 2)
+        )
         print(frame)
 
     def stall(self):
