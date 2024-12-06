@@ -2,8 +2,7 @@ from cpu import CPU
 
 def main():
     cpu = CPU(False)
-    off = cpu.load_data_at('badappl.bin', 0x40)
-    cpu.load_data_at('output.bin', off, True)
+    cpu.load_data_at('complete.bin', 0x40)
     while True:
         cpu.cycle()
 

@@ -1,8 +1,8 @@
 #bankdef program {
     #bits 32
     #addr 0x000040
-        #size 0x300000
-        #outp 0
+    #size 0x300000
+    #outp 0
 }
 
 #ruledef {
