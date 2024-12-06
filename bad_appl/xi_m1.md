@@ -15,6 +15,7 @@ Procesor XI_M1 (dále jen XI) má 32 general purpouse registrů r0-r31. Registr 
 
 Procesor má operační pamněť 12MB. To znamená 0x300000 pamněťových buňek po 32 bitech.
 Program se načítá na adresu 0x40 to je i adresa na kterou je inicializovaný program counter.
+Program má big endianess.
 
 # Instrukce
 
