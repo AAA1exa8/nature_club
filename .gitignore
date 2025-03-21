@@ -1,3 +1,5 @@
 .idea/
 .venv/
 __pycache__/
+game_of_life_sdl/bin
+game_of_life_sdl/obj
